@@ -1,0 +1,19 @@
+@import './mixins.scss';
+@import './variables.scss';
+
+%bottom-border {
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      border-bottom: 2px solid $yellow_primary;
+      @include transition(width, 0.3s);
+    //   width: 0;
+    }
+}
+
+%flex-col {
+    display: flex;
+    flex-direction: column;
+}

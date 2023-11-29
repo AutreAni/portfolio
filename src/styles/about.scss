@@ -1,0 +1,162 @@
+@import './variables.scss';
+@import './mixins.scss';
+.about-wrapper {
+  position: relative;
+  section {
+    width:100%;
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    box-sizing: border-box;
+    .overview-wrapper h3 {
+      animation: slide-right-fade-in 0.3s ease-in 0.3s forwards;
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    .overview-wrapper {
+      padding: 50px 50px 0 0;
+      width:  calc(100% - #{"min(30vw, 300px)"});
+      p {
+        animation: slide-down-fade-in 0.3s ease-in 0.6s forwards;
+        transform: translateY(100%);
+        opacity: 0;
+        strong {
+          font-weight: inherit;
+        }
+      }
+      strong {
+        background-image: linear-gradient(
+          to right,
+          $yellow_light 0,
+          $yellow_light 100%
+        );
+        background-position: 0 1.2em;
+        background-size: 0 100%;
+        background-repeat: no-repeat;
+        box-shadow: inset 0 0.7em 0 0$main-bg-color;
+      }
+      @for $i from 1 through 4 {
+        strong:nth-child(#{$i}) {
+          animation: highlight-marker-effect 0.5s ease-in 1s * $i forwards;
+        }
+      }
+    }
+    button {
+      animation-delay: 0.9s;
+    }
+  }
+    $a: 300px;
+    $b: 30vw;
+
+  .profile_image {
+    transform: translateY(-150px);
+    opacity: 0;  
+    animation:slide-down-fade-in 0.3s ease-in 0.9s forwards;
+    position: relative;
+    background: center / contain no-repeat url("../images/profile_image.PNG");
+    border-radius: 0 0 50px 50px;
+    width: #{"min(30vw, 300px)"};
+    height: #{"min(44vw, 440px)"};
+    margin: 0;
+    padding: 0;
+  }
+
+}
+.techstack {
+    position: relative;
+    margin-top:50px;
+    text-align: center;
+
+    h3, h4 {
+        margin:10px 0;
+    }
+    &_image_wrapper {
+        margin-right: 5%;
+        display: flex;
+        align-items: center;
+
+        ul {
+            flex-wrap: wrap;
+            @media only screen and(max-width:700px) {
+                justify-content: space-around;
+                
+            }
+        }
+        li {
+            position: relative; 
+            width:30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top:30px;
+            // background-color: $yellow_primary;
+            border-radius: 20px;
+            padding: 30px ;
+            border:1px dashed $black_primary;
+            min-width: 240px;
+
+           
+                &:hover {
+                svg {
+                    transform: scale(1.2);
+                }
+            }
+            p {
+                @include font-size($small_font_sizes)
+            }
+            .name {
+                @include font-size($medium_font_sizes);
+            }
+            .tag {
+                font-weight: 600;
+                // font-family: "KgSecondChances";
+            }
+        }
+        svg {
+            transition: transform .5s ease-in;
+
+                width:50px; 
+                height: 50px;           
+            }
+        
+    }
+    button {
+        margin:50px 0;
+    }
+}
+.stack_carousel {
+  width:100%;
+  height: 20%;
+  position: relative;
+  border:1px dashed black;
+  border-radius: 50%;
+  list-style-type: none;
+  opacity: 0;
+  animation: fade-in 0.3s ease-in 5s forwards;
+  &_wrapper {
+    position: absolute;
+    top:30px;
+    left:50%;
+    transform: translateX(-50%);
+    width:80%;
+    height: 100%;
+  }
+  &_item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    font-size: 1.4rem;
+    svg {
+        width: #{"min(3vw, 30px)"};
+        height: #{"min(3vw, 30px)"};
+      }
+  }
+  @for $i from 1 through 7 {
+    .stack_carousel_item:nth-child(#{$i}) {
+      animation: move-x 5s linear 1s *(5/7)* $i infinite,
+                 move-y 5s linear 1s *(5/7) * $i infinite;
+    }
+  }
+}

@@ -1,0 +1,72 @@
+@import './mixins.scss';
+@import './variables.scss';
+
+button {
+    border:none;
+    background-color: transparent;
+    padding:10px 0;
+    outline: none;
+    position: relative;
+    color:$black_primary;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    @include font-size($paragraph_font_sizes, $breakpoints);
+    @include transition(all, 0.3s);
+    cursor: pointer;
+    @include bottom-border($gray_font, 2px);
+
+      &:before {
+        content: '\1F852'; 
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+        @include transition(all, 0.3s)
+      }
+    //   &:after {
+    //     width:0;
+    //     left:0;
+    // } 
+    &:hover {
+      padding-left: 30px;
+      color: $gray_font;
+      &:after {
+        width:100%;        
+      }
+      &:before {
+        opacity: 1;
+      }   
+    }      
+}
+
+h1 {
+  @include font-size($title_font_sizes, $breakpoints);
+  font-family: "KgSecondChances";
+  margin:0;
+}
+h3 {
+  @include font-size($subtitle_font_sizes, $breakpoints);
+  font-family: "KgSecondChances";
+  margin:0;
+}
+
+h4 {
+  @include font-size($small_title_font_sizes);
+  font-family: "KgSecondChances";
+}
+h1, h3, h4 {
+  i {
+    font-weight: 200;
+    font-style: normal;
+  }
+}
+p {
+  @include font-size($paragraph_font_sizes, $breakpoints);
+}
+
+
+.flex-box-space-between {
+  display: flex;
+  justify-content: space-between;
+}

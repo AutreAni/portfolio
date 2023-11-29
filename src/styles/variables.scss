@@ -1,0 +1,59 @@
+//colorsw
+$main-bg-color:#E6E6E6;
+$black_primary:#222222;
+$black_op01: rgba(34, 34, 34, 10%);
+$gray_font:#4d4d4d;
+$yellow_primary:#f5d25c;
+$yellow_light:#f9e49f;
+//breakpoints
+$breakpoints: (
+  xsmall: 360px,
+  small : 480px,
+  medium: 700px,
+  large : 1024px
+);
+//font-sizes
+
+$title_font_sizes: (
+  null: 36px,
+  xsmall:36px,
+  small: 64px,
+  medium : 80px,
+  large : 100px,
+);
+
+$subtitle_font_sizes: (
+  null: 28px,
+  small: 28px,
+  medium : 44px,
+  large : 64px,
+);
+
+$small_title_font_sizes: (
+  null: 18px,
+  small: 18px,
+  medium : 24px,
+  large : 28px,
+);
+
+$paragraph_font_sizes: (
+  null: 14px,
+  small: 14px,
+  medium : 20px,
+  large : 24px,
+);
+
+$medium_font_sizes: (
+  null: 16px,
+  small: 16px,
+  medium : 18px,
+  large : 20px,
+);
+
+$small_font_sizes: (
+  null: 14px,
+  small: 14px,
+  medium : 14px,
+  large : 16px,
+)
+
