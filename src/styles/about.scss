@@ -104,9 +104,9 @@
             p {
                 @include font-size($small_font_sizes)
             }
-            .name {
-                @include font-size($medium_font_sizes);
-            }
+            // .name {
+            //     @include font-size($medium_font_sizes);
+            // }
             .tag {
                 font-weight: 600;
                 // font-family: "KgSecondChances";

@@ -47,9 +47,7 @@ function TechStack() {
         <section
             className="techstack">
             <div className="title-wrapper">
-            <h4>Let's get techniqual</h4> 
-                        As a <strong>React-specialized</strong> Frontend Developer, I am passionate about creating cutting-edge, <strong>pixel-perfect</strong> interfaces. My expertise lies in developing <strong>responsive web pages </strong> with well-tested, precisely <strong>organized code</strong>, aiming for a seamless blend of functionality and code quality in robust web applications.
-
+            <h4>My Expertise</h4>                
             </div>
             <div
                 className="techstack_image_wrapper">
