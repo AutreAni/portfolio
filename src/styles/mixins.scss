@@ -28,14 +28,28 @@
     }
   }
   
-  @mixin bottom-border($border-color, $border-size) {
+  @mixin border_appear_bottom($height, $color, $transition) {
     &:after {
       content: "";
       position: absolute;
       bottom: 0;
       left: 0;
-      border-bottom: $border-size solid $border-color;
-      transition: width 0.3s;
+      height: $height;
       width: 0;
+      background-color: $color;
+      transition: all $transition;
+    }
+  }
+
+  @mixin border_appear_right($width, $color, $transition) {
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 0;
+      width: $width;
+      background-color: $color;
+      transition: all $transition;
     }
   }

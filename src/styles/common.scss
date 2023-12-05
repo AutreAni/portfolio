@@ -13,8 +13,7 @@ button {
     @include font-size($paragraph_font_sizes, $breakpoints);
     @include transition(all, 0.3s);
     cursor: pointer;
-    @include bottom-border($gray_font, 2px);
-
+    @include border_appear_bottom(2px, $gray_font, 0.3s);
       &:before {
         content: '\1F852'; 
         position: absolute;
@@ -45,6 +44,11 @@ h1 {
   font-family: "KgSecondChances";
   margin:0;
 }
+h2 {
+  @include font-size($huge_font_sizes, $breakpoints);
+  font-family: "KgSecondChances";
+  margin:0;
+}
 h3 {
   @include font-size($subtitle_font_sizes, $breakpoints);
   font-family: "KgSecondChances";
@@ -64,9 +68,42 @@ h1, h3, h4 {
 p {
   @include font-size($paragraph_font_sizes, $breakpoints);
 }
+.grid_ {
+  &horizontal {
+    background-color: $black_primary;
+    height: 2px;
+    width: 100%;
+  }
+  &vertical {
+    background-color: $black_primary;
+    width: 2px;
+    height: 100%;
+  }
+}
 
 
 .flex-box-space-between {
   display: flex;
   justify-content: space-between;
+}
+.flex_box_space_between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex_box_start_center {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.flex_box_start_end {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.flex_box_center_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

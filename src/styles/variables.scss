@@ -13,6 +13,13 @@ $breakpoints: (
   large : 1024px
 );
 //font-sizes
+$huge_font_sizes: (
+  null: 60px,
+  xsmall:80px,
+  small: 100px,
+  medium : 120px,
+  large : 160px,
+);
 
 $title_font_sizes: (
   null: 36px,
