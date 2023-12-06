@@ -4,6 +4,8 @@ import { ReactComponent as FunctionalityIcon } from '../icons/techStack/function
 import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from 'react';
+import HorizontalGrid from './Grids/HorizontalGrid';
+import VerticalGrid from './Grids/VerticalGrid';
 const stack = [
     {
         name: "Concept",
@@ -47,15 +49,18 @@ function TechStack() {
         <section
             className="techstack">
             <div className="title-wrapper">
-            <h4>My Expertise</h4>                
+            <h4>What I do</h4>                
             </div>
+            <HorizontalGrid/>
             <div
-                className="techstack_image_wrapper">
+                className="techstack_image_wrapper container">
                 <ul
                     className="flex-box-space-between">
 
                     {
                         stack.map((item, index) => (
+                            <>
+                            {/* {index === 0 && <VerticalGrid/>} */}
                             <li
                                 className={index === activeIndex ? "list_active" : ""}
                                 key={index}>
@@ -70,21 +75,15 @@ function TechStack() {
                                     <p
                                         className='description'>{item.description}</p>
                                 </div>
-
-
-
                             </li>
+                            {index < stack.length - 1 && <VerticalGrid/> }                    
+                            </>
                         ))
                     }
                 </ul>
-
             </div>
-            <Button
-                onClick={() => navigate("/about/resume")}
-                label="see resume" />
-
+            <HorizontalGrid/>
         </section>
-
     )
 }
 

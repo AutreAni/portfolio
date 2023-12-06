@@ -17,6 +17,12 @@ const animationVariants = {
             hidden: { opacity: 0, height: initial }
         })
     },
+    fadeIn: function(){
+        return({
+            visible: { opacity: 1 },
+            hidden: { opacity: 0 }
+        })
+    },
     slide: function({ initial = "-100%", duration = 1, direction = "right" }) {
         let transformOrigin = "right";
         let slideValue = `-${initial}`;

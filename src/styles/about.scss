@@ -108,7 +108,7 @@
       // background-color: $yellow_primary;
       border-radius: 20px;
       padding: 30px;
-      border: 1px dashed $black_primary;
+      // border: 1px dashed $black_primary;
       min-width: 240px;
 
       &:hover {
@@ -174,4 +174,31 @@
     }
   }
 }
+.extras_text {
+  width:50%;
+}
 
+.laptop_wrapper {
+  width:50%;
+  transition: all 1s;
+  &_disappear {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+}
+.laptop {
+	width:80%
+}
+.laptop-bottom path {
+	fill:  $black_primary;
+}
+.laptop-bottom rect {
+	fill: $black_op01;
+}
+.laptop-lid {
+	fill: $black_primary;
+  transition:all 1s ease-out
+}
+.screen-bg {
+  // background: center / contain no-repeat url("../images/profile_image.PNG");
+}

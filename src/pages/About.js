@@ -1,6 +1,7 @@
 
 import StackCarousel from "../components/StackCarousel";
 import TechStack from "../components/TechStackList";
+import Extras from "../components/Extras";
 import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
 import { ReactComponent as ReactIcon } from "../icons/techStack/react.svg";
@@ -17,8 +18,8 @@ function About() {
             <section>
                 <div className="container flex-box-space-between">
                     <AnimateOnScrollComponent
-                        className = "title_wrapper"
-                        variants={animationVariants.slide({direction:"down"})}>
+                        className="title_wrapper"
+                        variants={animationVariants.slide({ direction: "down" })}>
                         <h2><span>About</span>Me
                         </h2>
                     </AnimateOnScrollComponent>
@@ -49,16 +50,35 @@ function About() {
                     </AnimateOnScrollComponent>
                     <VerticalGrid />
                     <div
-                        className="flex_box_center_center">
+                    >
                         <p>
                             As a <strong>React-specialized</strong> Frontend Developer, my expertise lies in developing <strong>responsive web pages </strong> with well-tested, precisely <strong>organized code</strong> and <strong>pixel-perfect</strong> intuative interfaces.
                         </p>
+                        <Button
+                            onClick={() => navigate("/about/resume")}
+                            label="see resume" />
+
                     </div>
                 </div>
                 <HorizontalGrid />
-                    <div className="container">
-                        <TechStack/>
+                <TechStack />
+                <div>
+                    <h4>
+                        Some Extras
+                    </h4>
+                    <HorizontalGrid />
+
+                    <div
+                        className="flex_box_space_between">
+                        <p
+                            className="extras_text">
+                            I'm Armenian national currently living in Thailand with my small family.
+                            If not in front of the computer coding or learning how to code, you’ll probably find me immersed in the joys and challenges of parenting. Even with the little one around, I make time for CrossFit sessions because I firmly believe that nurturing my physical and mental health empowers me. With discipline, I take control, knowing it positively influences my life and the lives of those I cherish. And for some relaxation before bed, I indulge in my form of meditation - weaving with macrame cords while tuning into a podcast.
+                        </p>
+                        <Extras/>
                     </div>
+                    <HorizontalGrid />
+                </div>
             </section>
         </div>
 
