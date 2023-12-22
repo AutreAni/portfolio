@@ -11,13 +11,11 @@
       align-self: flex-end;
     }
     h2 {
-      
-      
       span {
         writing-mode: vertical-lr;
       }
     }
-  
+
     .profile_img_wrapper {
       padding-bottom: 30px;
     }
@@ -175,11 +173,11 @@
   }
 }
 .extras_text {
-  width:50%;
+  width: 50%;
 }
 
 .laptop_wrapper {
-  width:50%;
+  width: 50%;
   transition: all 1s;
   &_disappear {
     transform: scale(0.1);
@@ -187,18 +185,105 @@
   }
 }
 .laptop {
-	width:80%
+  width: 80%;
 }
 .laptop-bottom path {
-	fill:  $black_primary;
+  fill: $black_primary;
 }
 .laptop-bottom rect {
-	fill: $black_op01;
+  fill: $black_op01;
 }
 .laptop-lid {
-	fill: $black_primary;
-  transition:all 1s ease-out
+  fill: $black_primary;
+  transition: all 1s ease-out;
 }
 .screen-bg {
-  // background: center / contain no-repeat url("../images/profile_image.PNG");
+  background-color: #000;
 }
+.new {
+  background-color: red;
+}
+
+// .extras{
+//   padding:30px;
+//   &_list {
+//   position: relative;
+//   border-radius: 50%;
+//   padding:30px;
+//   $number-of-children: 6;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   position: relative;
+//     &_wrapper {
+//       width:50%;
+//     }
+//     &_appear {
+//       li {
+//         @for $i from 1 through $number-of-children {
+//           $angle: (360deg / $number-of-children) * ($i - 1);
+//           $adjustedAngle: $angle;
+//           @if math.abs($angle) > 180deg {
+//             $adjustedAngle: $adjustedAngle - 360deg;
+//           }
+         
+//           &:nth-child(#{$i}) {
+//             opacity: 1;
+//             transform: rotate($adjustedAngle) translateY(-120px) rotate(-$adjustedAngle);
+//             transition-delay: 0.2s * ($i - 1);
+//           }
+//         }
+//       }
+//     }
+//   li {
+//     opacity: 0;
+//     width: 80px; 
+//     height: 80px; 
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     position: absolute;
+//     border:1px dashed $black_primary;
+//     border-radius: 10px;
+//     padding:10px;
+//     transition: all 0.2s cubic-bezier(0.1, 0.3, 0.2, 1);
+//     &:last-child {
+//       opacity: 1;
+//     }
+//   }
+
+//   img {
+//     // width: 80%; /* Adjust the size of the images */
+//     height: auto;
+//     max-width: 100%;
+//   }
+// }
+// }
+
+
+.extras {  
+  h4 {
+    text-align: center;
+  }
+  &_list {
+    flex-wrap: wrap;
+    li {
+      width:calc(100% / 3);
+      padding:10px;
+      &:nth-child(even) {
+        background-color:$yellow_primary
+      }
+      &:nth-child(odd) {
+        background-color:$gray_font;
+      }
+    }
+    &_wrapper {
+      width:50%;
+    }
+    img {
+      width:100px;
+      
+    }
+  }
+}
+

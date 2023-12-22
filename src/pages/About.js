@@ -62,7 +62,8 @@ function About() {
                 </div>
                 <HorizontalGrid />
                 <TechStack />
-                <div>
+                <div
+                    className="extras">
                     <h4>
                         Some Extras
                     </h4>
