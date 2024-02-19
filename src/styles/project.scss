@@ -1,0 +1,330 @@
+.project {
+  $nav_width: 100px;
+  @media screen and (max-width: 700px) {
+    $nav_width: 80px;
+  }
+  $default_menu_width: calc(#{$nav_width} + 4vw);
+
+  .container {
+    width: calc(100% - #{$default_menu_width});
+    margin:0;
+    border-right: 1px solid $black_primary;
+  }
+
+  .page_menu {
+    position: sticky;
+    min-width: fit-content;
+    border-right: 1px solid $black_primary;
+    width: $default_menu_width;
+    top: 0;
+    height: 100vh;
+    padding: 50px 0;
+
+    li {
+      padding: 30px 0px;
+      width: $nav_width;
+      display: block;
+      margin: 0 auto;
+      font-family: SyneBold, sans-serif;
+      transition: color 0.3s ease-in;
+
+      &:first-child {
+        padding-top: 0;
+      }
+
+      &:not(&.active) {
+        cursor: pointer;
+      }
+
+      &.active {
+        color: $yellow_primary;
+      }
+
+      @media screen and (max-width: 700px) {
+        font-size: 14px;
+      }
+
+      @media screen and (max-width: 480px) {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .overview {
+    &_wrapper {
+      padding: 50px 20px;
+    }
+
+    h3 {
+      margin-bottom: 50px;
+    }
+
+    &_text {
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid $black_primary;
+      &:last-child {
+        border-bottom: none;
+        padding-bottom: 0px;
+        margin-bottom: 0;
+      }
+      p {
+        color: $gray_font;
+        margin: 0;
+        $title_width: 200px;
+
+        &:first-child {
+          font-family: SyneExtraBold, sans-serif;
+          white-space: nowrap;
+          width: $title_width;
+
+          @media screen and (max-width: 480px) {
+            font-size: 14px;
+          }
+        }
+
+        &:last-child {
+          font-family: Syne, sans-serif;
+          width: calc(100% - #{$title_width} - 50px);
+          min-width: 200px;
+
+          @include font-size($small_font_sizes, $breakpoints);
+
+          @media screen and (max-width: 480px) {
+            min-width: fit-content;
+          }
+        }
+      }
+    }
+  }
+
+  .page {
+    margin: 0 auto;
+    overflow: hidden;
+
+    &s_wrapper {
+      position: relative;
+      display: flex;
+
+      img {
+        width: 100%;
+      }
+
+      .home {
+        position: relative;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+
+        &_img_wrapper {
+          &_0 {
+            width: 20%;
+            z-index: 1;
+          }
+
+          &_1 {
+            width: 65%;
+            display: block;
+            height: auto;
+            object-fit: contain;
+          }
+        }
+      }
+
+      .product {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        &_img_wrapper {
+          &_0 {
+            width: 20%;
+            margin: 100px 0;
+            @media screen and (max-width: 700px) {
+                margin:4vw 0;
+              }
+          }
+
+          &_1 {
+            width: 70%;
+            align-self: flex-start;
+
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      .dashboard {
+        .benefits_slides_container  {
+            aspect-ratio: 8/5;
+        }
+        .fundraising_slides_container {
+            aspect-ratio: 3/2;
+        }
+        .slider_wrapper {
+          width: 80%;
+          margin: 0 auto;
+        
+          .navigation_buttons span:not(.active)  {
+            background-color: rgba(255, 255, 255, 0.7);
+          }
+          @media screen and (max-width: 700px) {
+            padding: 20px 0;
+            .navigation_buttons {
+                margin-top: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// .project {
+//     $nav_width: 100px;
+//     $menu_width:calc($nav_width + 4vw);
+
+//     .container {
+//         width:calc(100% - $menu_width);
+//     }
+//     .page_menu {
+//         position: sticky;
+//         min-width: fit-content;
+//         border-right: 1px solid $black_primary;
+//         width: $menu_width;
+//         top: 0;
+//         height: 100vh;
+//         padding: 50px 0;
+//         li {
+//           padding: 30px 0px;
+//           width: $nav_width;
+//           display: block;
+//           margin: 0 auto;
+
+//           font-family: SyneBold, sans-serif;
+//           transition: color 0.3s ease-in;
+//           &:first-child {
+//               padding-top: 0;
+//           }
+//           &:not(li.active) {
+//             cursor: pointer;
+//           }
+//           &.active {
+//             color: $yellow_primary;
+//           }
+//           @media screen and (max-width: 700px) {
+//             font-size: 14px;
+//             $nav_width:80px;
+//         }
+//             @media screen and (max-width: 480px) {
+//                 font-size: 12px;
+//             }
+//         }
+//       }
+//   .overview {
+//     &_wrapper{
+//         padding:50px 20px;
+//     }
+//     h3 {
+//         margin-bottom: 50px;
+//     }
+//     &_text{
+//         flex-wrap: wrap;
+//         margin-bottom: 30px;
+//         p {
+//             color:$gray_font;
+//             margin:0;
+//             $title_width:200px;
+//             &:first-child {
+//               font-family: SyneExtraBold,sans-serif;
+//               white-space: nowrap;
+//               margin-bottom: 20px;
+//               width: $title_width;
+//               @media screen and (max-width: 480px) {
+//                 font-size: 14px;
+//             }
+//             }
+//             &:last-child {
+//               font-family: Syne,sans-serif;
+//               width: calc(100% - $title_width - 50px);
+//               min-width: 200px;
+//               @include font-size($small_font_sizes, $breakpoints);
+//               @media screen and (max-width: 480px) {
+//                 min-width: fit-content;
+//             }
+//             }
+//           }
+
+//     }
+//   }
+
+//   .page {
+//     margin: 0 auto;
+//     overflow: hidden;
+
+//     &s_wrapper {
+//       position: relative;
+//       display: flex;
+//       img {
+//         width:100%;
+//         }
+//       .home {
+//         position: relative;
+//         display: flex;
+//         flex-direction: row-reverse;
+//         justify-content: space-between;
+//         align-items: center;
+//         &_img_wrapper {
+//           &_0 {
+//             width: 25%;
+//             z-index: 1;
+//             border-top-left-radius: 6px;
+//             border-bottom-left-radius: 6px;
+//           }
+//           &_1 {
+//             width: 70%;
+//             display: block;
+//             height: auto;
+//             object-fit: contain;
+//             border-top-right-radius: 6px;
+//             border-bottom-right-radius: 6px;
+//           }
+//         }
+//       }
+//       .benefits {
+//         display: flex;
+//         align-items: center;
+//         justify-content: space-between;
+//         position: relative;
+//         &_img_wrapper {
+//           &_0 {
+//             width: 20%;
+//             margin: 100px 0;
+
+//             border-top-right-radius: 6px;
+//             border-bottom-right-radius: 6px;
+//           }
+//           &_1 {
+//             width: 70%;
+//             align-self: flex-start;
+//             border-bottom-left-radius: 20px;
+//             img {
+//                 width:100%;
+//             }
+//           }
+//         }
+//       }
+//       .dashboard {
+//         .slider_wrapper {
+//           width: 80%;
+//           margin: 0 auto;
+//         }
+//       }
+//     }
+
+//   }
+// }

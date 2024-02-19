@@ -1,0 +1,62 @@
+.contacts {
+    min-height: 100vh;
+    align-items: center;
+    font-family: "Syne", sans-serif;
+    h4 {
+        font-family: "Syne";
+        margin:0;
+    }
+    &_info,
+    .form_wrapper {
+        overflow: hidden;
+        width:calc(50% - 0.5px);
+        min-height: inherit;
+        padding:50px;
+        flex-wrap: wrap;
+        @media only screen and (max-width: 700px) {
+            width: 100%;
+        }
+        h4 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    }
+
+    ul {
+        display: flex;
+        svg {
+            width:20px;
+            height: 20px;
+            cursor: pointer;
+            &:first-of-type {
+                margin-right: 20px;
+            }
+            &:hover {
+                opacity: .7;
+            }
+        }
+    }
+    .success_msg {
+        p {
+            text-align: center;
+            font-size: 16px;
+            margin:0;
+        }
+        svg {
+            width:50px;
+            height: 50px;
+            margin-bottom: 30px;
+        }
+    }
+    &_info {
+        background-color: $black_primary;
+        color:#fff;
+        h4 {
+            text-align: left;
+            @include font-size($subtitle_font_sizes);
+        }
+    }
+    @media only screen and (max-width: 700px) {
+        flex-direction: column-reverse;
+    }
+}

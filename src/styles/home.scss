@@ -1,0 +1,26 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./fonts.scss";
+
+main .home {
+  height: 100%;
+  min-height: 100vh;
+  .title-wrapper {
+    width: fit-content;
+    word-wrap: break-word;
+    text-align: start;
+    overflow: hidden;
+  }
+  h1 {
+    font-size: 90px;
+    font-family: "KgSecondChances";
+    margin: 0;
+    span {
+      display: block;
+      margin: 0;
+    }
+    @media only screen and (max-width: $breakpoint_tablet) {
+      font-size: 12vw;
+    }
+  }
+}

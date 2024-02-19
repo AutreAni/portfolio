@@ -1,0 +1,161 @@
+@import "./mixins.scss";
+@import "./variables.scss";
+:root {
+  --section_padding: 50px;
+  @media screen and (max-width: $breakpoint_mobile) {
+    --section_padding: 20px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  background-color: $main-bg-color;
+  min-height: 100vh;
+}
+
+.container_outer {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: none;
+  outline: none;
+  &:not(button:disabled) {
+    cursor: pointer;
+  }
+}
+
+h1, h2, h3 {
+  font-family: "KgSecondChances";
+  margin: 0;
+}
+h2 {
+  font-size: min(11vw, 158px);
+}
+
+
+
+h4,
+h5 {
+  @include font-size($small_title_font_sizes);
+  font-family: "KgSecondChances";
+}
+h1,
+h2,
+h3,
+h4,
+p {
+  i {
+    font-weight: 200;
+    font-style: normal;
+  }
+}
+p {
+  @include font-size($paragraph_font_sizes, $breakpoints);
+}
+.grid_ {
+  &horizontal {
+    background-color: $black_primary;
+    height: 1px;
+    width: 100%;
+  }
+  &vertical {
+    background-color: $black_primary;
+    width: 1px;
+    height: 100%;
+  }
+}
+
+.flex_box_start_start {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+}
+.flex-box-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+.flex_box_space_between {
+  display: flex;
+  justify-content: space-between;
+}
+.flex_box_center_end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.flex_box_space_evenly {
+  display: flex;
+  justify-content: space-evenly;
+}
+.flex_box_start_center {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.flex_box_start_end {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.flex_box_end_start {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.flex_box_end_between {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.flex_box_start_between {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.flex_box_center_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex_box_col {
+  display: flex;
+  flex-direction: column;
+}
+
+.half_width {
+  width: 50%;
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    &_wrapper {
+      flex-wrap: wrap;
+      flex-direction: column-reverse;
+    }
+  }
+}
+
