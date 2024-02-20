@@ -43,11 +43,12 @@
             position: relative;
             display: inline-block;
 
-            &:before {
+            &:after {
               content: "";
               color: $black_primary;
               position: absolute;
               bottom: 0;
+              left:0;
               border:1px solid $black_primary;
               width:0;
             }
@@ -55,10 +56,8 @@
         }
         @for $i from 1 through 10 {
           &_animated strong:nth-child(#{$i}) {
-            &:before {
+            &:after {
               animation: grow_width 0.5s ease-in 1s * $i forwards;
-
-
             }
           }
         }
