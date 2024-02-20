@@ -56,8 +56,6 @@ h2 {
   font-size: min(11vw, 158px);
 }
 
-
-
 h4,
 h5 {
   @include font-size($small_title_font_sizes);
@@ -86,6 +84,24 @@ p {
     background-color: $black_primary;
     width: 1px;
     height: 100%;
+  }
+}
+
+.underline_on_hover {
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-bottom: 2px solid #fff;
+    width: 0;
+    @include transition(width, 0.3s);
+  }
+  &:not(.active):hover {
+    &:after {
+      width: 100%;
+    }
   }
 }
 

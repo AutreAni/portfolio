@@ -58,7 +58,7 @@ export default function Menu({
         menuItems.map((item, key) => (
           <li key={"item_" + key}
             onClick={() => onClick(item, key)}
-            className={key === visibleKey ? "active" : ""}
+            className={`underline_on_hover ${key === visibleKey ? "active" : ""}`}
           >
             {item}
           </li>
