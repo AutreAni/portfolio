@@ -55,12 +55,12 @@
         position: absolute;
         content:"";
         background-color: $black_primary;
-        transition: width .6s ease-in;
+        transition: width 0.2s ease-in;
       }
       &.active {
         &:after {
           width:100%;
-          background-color: $black_primary;
+          transition: width .6s linear; 
         }
       }
     }
