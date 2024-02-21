@@ -1,39 +1,26 @@
-//colorsw
+//colors
 $main-bg-color:rgb(230, 230, 230);
-$black_primary:#222222;
+$black_primary:rgb(34, 34, 34);
 $black_op01: rgba(34, 34, 34, 10%);
 $black_op06: rgba(34, 34, 34, 60%);
 $black_op07: rgba(34, 34, 34, 70%);
-$gray_font:#4d4d4d;
-$yellow_primary:#f5d25c;
-$yellow_light:#f9e49f;
+$gray_font:rgb(77, 77, 77);
+$yellow_primary:rgb(245, 210, 92);
+
 //breakpoints
 $breakpoint_desktop:1280px;
 $breakpoint_laptop:1024px;
 $breakpoint_tablet:700px;
 $breakpoint_mobile:480px;
 $breakpoint_mobile_s: 360px;
+
 $breakpoints: (
-  xsmall: 360px,
-  small : 480px,
-  medium: 700px,
-  large : 1024px
+  xsmall: $breakpoint_mobile_s,
+  small : $breakpoint_mobile,
+  medium: $breakpoint_tablet,
+  large : $breakpoint_laptop,
 );
 //font-sizes
-// $huge_font_sizes: (
-//   null: 11vw,
-//   // small: 17vw,
-//   large : 11vw,
-// );
-
-$title_font_sizes: (
-  null: 36px,
-  xsmall:36px,
-  small: 64px,
-  medium : 80px,
-  large : 100px,
-);
-
 $subtitle_font_sizes: (
   null: 28px,
   small: 28px,
@@ -56,7 +43,7 @@ $paragraph_font_sizes: (
   large : 20px,
 );
 
-$small_font_sizes: (
+$small_paragraph_font_sizes: (
   null: 14px,
   small: 14px,
   medium : 14px,

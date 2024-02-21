@@ -11,8 +11,6 @@ export default function Tabs({
     return (
     <div
      className="tabs_wrapper flex_box_center_end">
-                 <VerticalGrid/>
-
         <ul
             className='flex_box_center_center flex_box_col'>
   

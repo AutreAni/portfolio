@@ -5,55 +5,59 @@
 .about-wrapper {
   section {
     font-family: "Syne", sans-serif;
-    .title_wrapper {
-      align-self: flex-end;
-      margin-bottom: var(--section_padding);
-    }
-    h2 {
-      text-shadow: 4px 4px 8px $black_primary;
-      span {
-        writing-mode: vertical-lr;
+
+    .profile {
+      height: calc(min(500px, 47vw) + var(--section_padding));
+      .title_wrapper {
+        align-self: center;
       }
-    }
-    .profile_image_wrapper {
-      display: flex;
-      justify-content: flex-end;
-      margin-bottom: var(--section_padding);
+
+      &_image_wrapper {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        height: 100%;
+      }
     }
 
     .react_icon_wrapper {
       padding: 20px 0;
       width: 80%;
+
       svg {
         width: 100%;
         height: auto;
         margin: 0 auto;
         animation: spin infinite 20s linear;
       }
+
       @media screen and (max-width: 700px) {
         width: 60%;
       }
     }
+
     .overview {
       &_wrapper {
         padding: 50px 0 50px 50px;
+
         p {
           strong {
             font-weight: inherit;
             position: relative;
             display: inline-block;
-
+            white-space: nowrap;
             &:after {
               content: "";
               color: $black_primary;
               position: absolute;
               bottom: 0;
-              left:0;
-              border:1px solid $black_primary;
-              width:0;
+              left: 0;
+              border: 1px solid $black_primary;
+              width: 0;
             }
           }
         }
+
         @for $i from 1 through 10 {
           &_animated strong:nth-child(#{$i}) {
             &:after {
@@ -61,41 +65,12 @@
             }
           }
         }
+
         @media screen and (max-width: 700px) {
           padding: 20px 0;
         }
       }
-      &_button {
-        font-family: "Syne",sans-serif;
-        background-color: transparent;
-        padding: 10px 0;
-        position: relative;
-        color: $black_primary;
-        @include font-size($small_title_font_sizes, $breakpoints);
-        @include transition(all, 0.3s);
-        @include border_appear_bottom(2px, #6d6d6d, 0.3s);
-        &:before {
-          content: "\1F852";
-          color: #6d6d6d;
-          position: absolute;
-          left: 0;
-          top: 50%;
-          transform: translateY(-50%);
-          opacity: 0;
-          @include transition(all, 0.3s);
-        }
 
-        &:hover {
-          padding-left: 40px;
-          color: $gray_font;
-          &:after {
-            width: 100%;
-          }
-          &:before {
-            opacity: 1;
-          }
-        }
-      }
       @media screen and (max-width: 700px) {
         .half_width {
           width: 100%;
@@ -107,16 +82,12 @@
   .profile_image {
     position: relative;
     background: center / cover no-repeat url("../images/profile_image.PNG");
-    width: #{"min(35vw, 350px)"};
-    height: #{"min(45vw, 450px)"};
+    height: calc(100% - var(--section_padding));
+    aspect-ratio: 7/9;
     margin: 0;
     padding: 0;
     border-bottom-left-radius: min(30px, 5vw);
     border-bottom-right-radius: min(30px, 5vw);
-    @media screen and (min-width: $breakpoint_desktop) {
-      width: #{"min(42vw, 420px)"};
-      height: #{"min(63vw, 630px)"};
-    }
   }
 }
 
@@ -127,6 +98,7 @@
   border: 1px dashed black;
   border-radius: 50%;
   list-style-type: none;
+
   &_wrapper {
     position: absolute;
     top: 10%;
@@ -135,6 +107,7 @@
     width: 80%;
     height: 100%;
   }
+
   &_item {
     position: absolute;
     top: 0;
@@ -149,6 +122,7 @@
       height: #{"min(3.7vw, 50px)"};
     }
   }
+
   @for $i from 1 through 7 {
     .stack_carousel_item:nth-child(#{$i}) {
       animation: move-x 10s linear 1s * (-10/7) * $i infinite,
@@ -161,38 +135,47 @@
   h3 {
     text-align: center;
     margin: 50px 0;
-    font-size: min(32px,8vw);
+    @include font-size($subtitle_font_sizes, $breakpoints)
+    // font-size: min(32px, 8vw);
   }
+
   &_list {
-    width: 100%;
     overflow: hidden;
+
     &_item {
       min-height: 300px;
       padding: 30px 0;
+
       p.subtitle {
         font-family: "SyneBold";
-        font-size:min(24px, 6vw);
+        font-size: min(24px, 6vw);
         margin: 0;
       }
+
       .flex_box_space_between {
         align-items: flex-start;
       }
+
       &:first-child {
         padding-right: 50px;
       }
+
       &:last-child {
         padding-left: 50px;
       }
+
       .image_wrapper {
         position: relative;
         width: min(80px, 8vw);
         height: min(80px, 8vw);
         margin: 0 min(40px, 4vw) 0 10px;
+
         img {
           width: 100%;
           height: 100%;
           position: relative;
         }
+
         &:before {
           position: absolute;
           content: "";
@@ -205,23 +188,29 @@
         }
       }
     }
+
     @media screen and (max-width: 700px) {
       flex-wrap: wrap;
+
       &_item {
         padding: 20px 0;
         min-height: 240px;
+
         &:first-child {
           padding-right: 0;
         }
+
         &:last-child {
           padding-left: 0;
         }
       }
+
       .image_wrapper {
         width: 13vw;
         height: 13vw;
         margin: 0 6.5vw 0 10px;
       }
+
       .half_width {
         width: 100%;
       }

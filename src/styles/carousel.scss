@@ -43,68 +43,28 @@
 
     span {
       width: 10%;
-      height: 2px;
+      height: 1px;
       border-radius: 2px;
       background-color: rgba(255, 255, 255, 0.7);
-      transition: background-color 0.3s ease-in;
-
+      transition: all 0.3s ease-in;
+      display: inline-block;
+      position: relative;
+      &:after {
+        width:0;
+        height: 100%;
+        position: absolute;
+        content:"";
+        background-color: $black_primary;
+        transition: width .6s ease-in;
+      }
       &.active {
-        background-color: #8d8d8d;
+        &:after {
+          width:100%;
+          background-color: $black_primary;
+        }
       }
     }
+  
   }
 }
 
-// .carousel {
-//   overflow-x: hidden;
-//   width: 80%;
-//   margin:50px auto;
-// }
-// .slides_container {
-//   position: relative;
-// }
-// .carousel .slides {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   display: flex;
-//   width: 100%;
-//   height: 100%;
-// }
-
-// .transition {
-//   transition: ease all 0.5s;
-// }
-
-// .carousel .slides .slide {
-//   background: #dadada;
-//   display: flex;
-//   position: relative;
-//   min-width: 100%;
-//   height: 100%;
-
-// }
-
-// .carousel .slides .slide .slide_inner {
-//       min-width:100%;
-//     height: 100%;
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//     background-position: center;
-//     background-color: $main-bg-color;
-//     transition: 1s ease-in;
-// }
-
-// .slide_indicator {
-//   margin-top: 50px;
-//   span {
-//     width: 10%;
-//     height: 2px;
-//     border-radius: 2px;
-//     background-color: rgba(255, 255, 255, 0.7);
-//     transition: background-color 0.3s ease-in;
-//   }
-//   .active {
-//     background-color: #8d8d8d;
-//   }
-// }

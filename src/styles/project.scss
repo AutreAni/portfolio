@@ -92,9 +92,7 @@
           font-family: Syne, sans-serif;
           width: calc(100% - #{$title_width} - 50px);
           min-width: 200px;
-
-          @include font-size($small_font_sizes, $breakpoints);
-
+          @include font-size($small_paragraph_font_sizes, $breakpoints);
           @media screen and (max-width: 480px) {
             min-width: fit-content;
           }
@@ -173,14 +171,8 @@
           width: 80%;
           margin: 0 auto;
         
-          .navigation_buttons span:not(.active)  {
-            background-color: rgba(255, 255, 255, 0.7);
-          }
           @media screen and (max-width: 700px) {
             padding: 20px 0;
-            .navigation_buttons {
-                margin-top: 10px;
-            }
           }
         }
       }

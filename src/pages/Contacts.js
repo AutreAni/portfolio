@@ -6,7 +6,7 @@ import animationVarients from '../animationVarients/animationVarients.js'
 export default function Contacts() {
     return (
         <div
-            className="contacts flex_box_space_between">
+            className="contacts full_vh flex_box_space_between">
             <div
                 className="contacts_info flex_box_space_between flex_box_col">
                 <AnimateOnScrollComponent

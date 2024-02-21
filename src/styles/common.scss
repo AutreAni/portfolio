@@ -19,7 +19,6 @@ body {
   display: flex;
   flex-direction: column;
   background-color: $main-bg-color;
-  min-height: 100vh;
 }
 
 .container_outer {
@@ -48,6 +47,42 @@ button {
   }
 }
 
+button.underlined {
+  font-family: "Syne", sans-serif;
+  background-color: transparent;
+  padding: 10px 0;
+  position: relative;
+  color: $black_primary;
+  @include font-size($small_title_font_sizes, $breakpoints);
+  @include transition(all, 0.3s);
+  @include border_appear_bottom(2px, #6d6d6d, 0.3s);
+
+  &:before {
+    content: "\1F852";
+    color: #6d6d6d;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    @include transition(all, 0.3s);
+  }
+
+  &:hover {
+    padding-left: 40px;
+    color: $gray_font;
+
+    &:after {
+      width: 100%;
+    }
+
+    &:before {
+      opacity: 1;
+    }
+  }
+}
+
+
 h1, h2, h3 {
   font-family: "KgSecondChances";
   margin: 0;
@@ -72,8 +107,20 @@ p {
   }
 }
 p {
+  font-family: "Syne",sans-serif;
   @include font-size($paragraph_font_sizes, $breakpoints);
 }
+
+
+h2.title_vertical {
+  text-shadow: 4px 4px 8px $black_primary;
+  font-weight: 200;
+  span {
+    writing-mode: vertical-lr;
+  }
+  
+}
+
 .grid_ {
   &horizontal {
     background-color: $black_primary;
@@ -86,7 +133,9 @@ p {
     height: 100%;
   }
 }
-
+.full_vh {
+  min-height: 100vh;
+}
 .underline_on_hover {
   position: relative;
   &:after {
@@ -105,15 +154,6 @@ p {
   }
 }
 
-.flex_box_start_start {
-  display: flex;
-  justify-content: start;
-  align-items: start;
-}
-.flex-box-space-between {
-  display: flex;
-  justify-content: space-between;
-}
 .flex_box_space_between {
   display: flex;
   justify-content: space-between;
@@ -123,30 +163,15 @@ p {
   justify-content: flex-end;
   align-items: center;
 }
-.flex_box_space_evenly {
-  display: flex;
-  justify-content: space-evenly;
-}
+
 .flex_box_start_center {
   display: flex;
   align-items: flex-start;
   justify-content: center;
 }
-.flex_box_start_end {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-}
-.flex_box_end_start {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-}
-.flex_box_end_between {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-}
+
+
+
 .flex_box_start_between {
   display: flex;
   align-items: flex-start;

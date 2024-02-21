@@ -1,4 +1,4 @@
-import Hero from '../components/Work/Hero/Hero'
+import Hero from '../components/Work/Hero'
 import { useState } from 'react';
 
 

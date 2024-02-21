@@ -1,0 +1,8 @@
+{
+    "name": "Portfolio - Ani Karapetyan",
+    "short_name": "portfolio",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "rgb(230, 230, 230)",
+    "description": "Porfolio website created by Ani Karapetyan - a Frontend developer"
+}

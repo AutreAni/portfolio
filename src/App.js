@@ -9,10 +9,11 @@ import PDFViewer from "./pages/PDFViewer";
 import Layout from "./components/common/Layout";
 import Project from "./pages/Project";
 import Contacts from './pages/Contacts';
-
+import { PATHS } from "./constants";
+import NotFound from "./pages/NotFound";
 function App() {
   return (
-    <div className="app">
+    <div className="app fUll_vh">
     <div
       className="container_outer">
       <BrowserRouter>
@@ -25,6 +26,7 @@ function App() {
           <Route path = "/work" element = {<Work />} />
           <Route path = "/work/:projectName" element = {<Project />} />
           <Route path = "/contacts" element = {<Contacts/>}/>
+          <Route path= {PATHS.NOT_FOUND} element = {<NotFound/>}/>
         </Route>         
         </Routes>
       </BrowserRouter>

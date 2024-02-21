@@ -6,7 +6,7 @@ import HEADINGS from "../../../data/headings"
 
 export default function Profile() {
     return (
-        <div className="container flex-box-space-between profile">
+        <div className="container flex_box_space_between profile">
             <AnimateOnScrollComponent
                 className="title_wrapper half_width"
                 variants={animationVariants.slide({ direction: "down" })}>

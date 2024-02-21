@@ -31,7 +31,7 @@ export default function Overview() {
             className={`overview_wrapper ${animationComplete ? "overview_wrapper_animated" : ""}`}>
             {CONTENT.about.overview}
             <button
-                className="overview_button"
+                className="underlined"
                 onClick={() => navigate(PATHS.RESUME)}
             >see resume
             </button>

@@ -1,8 +1,9 @@
+
 .work_wrapper {
+  $title_wrapper_width: min(13vw, 300px);
   .hero {
     display: flex;
     position: relative;
-    min-height: 100vh;
 
     &_bg {
       width: 60%;
@@ -14,56 +15,53 @@
     }
 
     .title_wrapper {
-      width:13vw;
-      border-right:1px solid $black_primary;
+      width: $title_wrapper_width;
+      border-right: 1px solid $black_primary;
+
       h2 {
-        position: relative;
-        z-index: 1;
-        height: 100%;
         text-align: center;
-        writing-mode: vertical-lr;
-        text-shadow: 4px 4px 8px $black_primary;
       }
     }
-    .grid_vertical {
-      position: relative;
-      z-index: 1;
-    }
+
     .tabs_wrapper {
       min-height: inherit;
       position: absolute;
-      right:0;
-      width:calc(min(90%, 1440px) - 13vw);
+      right: 0;
+      width: calc(min(90%, 1440px) - $title_wrapper_width);
       ul {
         height: 100%;
-        width:100%;
+        width: 100%;
         overflow: hidden;
+
         div {
           width: 100%;
+
           &:first-of-type {
             border-bottom: 1px solid $black_primary;
           }
         }
       }
+
       li {
-        width: 100%;
+        width: 90%;
+        margin-right: min(10%, 80px);
+
         h2 {
-          font-size: min(170px, 12vw);
+          font-size: min(140px, 12vw);
           text-align: right;
           margin: 0;
           cursor: pointer;
           transition: all 0.3s ease-in;
-        }
-        &:hover {
-          h2 {
+
+          &:hover {
             font-weight: 200;
             transform: scale(0.9);
           }
         }
-      
       }
     }
   }
+
   .slider_wrapper {
     width: 65%;
     position: absolute;

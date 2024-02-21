@@ -56,7 +56,7 @@ header {
       position: relative;
       width: fit-content;
       opacity: 0;
-      @include font-size($small_font_sizes, $breakpoints);
+      @include font-size($small_paragraph_font_sizes, $breakpoints);
       animation: fadeIn .3s linear forwards .6s;
       &:after {
         content: "";
