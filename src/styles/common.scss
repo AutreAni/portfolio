@@ -123,14 +123,14 @@ h2.title_vertical {
 
 .grid_ {
   &horizontal {
-    background-color: $black_primary;
     height: 1px;
     width: 100%;
+    border-top:1px solid $black_primary
   }
   &vertical {
-    background-color: $black_primary;
     width: 1px;
     height: 100%;
+    border-right: 1px solid $black_primary;
   }
 }
 .full_vh {

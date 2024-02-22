@@ -37,7 +37,7 @@ const CONTENT = {
   about: {
     overview: (<p>
       As a <strong>React-specialized</strong> Frontend Developer, my expertise lies in developing <strong>responsive web pages </strong> with well-tested, precisely <strong>organized code</strong> and <strong>pixel-perfect</strong> intuative interfaces. <br />
-      Working at a small company granted me significant autonomy and responsibility. I was deeply engaged not just in <strong> product development</strong> but also in <strong>conceiving, designing and implementing features.</strong>Having a hand in the entire process was incredibly fulfilling. </p>)
+      Working at a small company granted me significant autonomy and responsibility. I was deeply engaged not just in <strong> product development</strong> but also in <strong>conceiving, designing</strong> and <strong>implementing features.</strong>Having a hand in the entire process was incredibly fulfilling. </p>)
   },
   contacts: {
     form: {
