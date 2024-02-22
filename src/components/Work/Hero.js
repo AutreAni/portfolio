@@ -11,7 +11,7 @@ export default function Hero({ activeTabIndex, onActiveIndexChange }) {
                 className="container flex_box_space_between
                 ">
                 <AnimateOnScrollComponent
-                    className="title_wrapper flex_box_center_center"
+                    className="title_wrapper"
                     variants={animationVariants.slide({ direction: "down" })}>
                     {HEADINGS.work.hero}
 
