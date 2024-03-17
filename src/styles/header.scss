@@ -67,9 +67,6 @@ header {
         width: 0;
         @include transition(width, 0.3s);
       }
-      &:last-of-type {
-        padding-bottom: 0;
-      }
       &:first-of-type {
         padding-top: 0;
       }
