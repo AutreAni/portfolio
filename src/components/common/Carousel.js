@@ -3,38 +3,44 @@ import { useEffect, useState, useRef } from "react";
 export default function Carousel({
     slides = [],
     speed = 3000,
-    transitionSpeed = 500,
-    autoScroll = true, 
+    transitionSpeed = 1000,
+    autoScroll = true,
     className
 }) {
 
-    const [visibleSlide, setVisibleSlide] = useState(1)
-    const [hasTransitionClass, setHasTransitionClass] = useState(true)
-    const [stateSlides, setStateSlides] = useState(slides)
+    const [visibleSlide, setVisibleSlide] = useState(1);
+    const [hasTransitionClass, setHasTransitionClass] = useState(false); // Initially set to false
+    const [stateSlides, setStateSlides] = useState(slides);
+    const [isMounted, setIsMounted] = useState(false); // Track whether the component has mounted
     const intervalId = useRef(null);
     const slideRef = useRef();
     const slideWidth = slideRef?.current?.getBoundingClientRect().width;
-    const transformValue =  slideWidth? visibleSlide * Math.round(slideWidth) + "px": visibleSlide * "100%";
+    const transformValue = slideWidth ? visibleSlide * Math.round(slideWidth) + "px" : visibleSlide * "100%";
 
     useEffect(() => {
         const slidesWithClones = [...slides]
         slidesWithClones.unshift(slidesWithClones[slidesWithClones.length - 1])
         slidesWithClones.push(slidesWithClones[1])
         setStateSlides(slidesWithClones)
-
-        // if (!!autoScroll) {
-        //     start()
-        // }
     }, [])
+
     useEffect(() => {
-        if(autoScroll) {
+        setIsMounted(true); // Set isMounted to true after the component mounts
+    }, []);
+
+    useEffect(() => {
+        if (isMounted) { // Only apply transition class when the component has mounted
+            setHasTransitionClass(true);
+        }
+        if (autoScroll) {
             start()
         }
         else {
             pause()
         }
-    }, [autoScroll])
+    }, [autoScroll, isMounted]);
 
+ 
     useEffect(() => {
         if (visibleSlide === stateSlides.length - 1) {
             setTimeout(() => {
@@ -75,7 +81,7 @@ export default function Carousel({
     }
 
     function pause() {
-        if(autoScroll || !intervalId.current) {
+        if (autoScroll || !intervalId.current) {
             return;
         }
         clearInterval(intervalId.current);
@@ -94,24 +100,27 @@ export default function Carousel({
 
     return (
         <div className="carousel">
-        <div
-            ref = {slideRef}
-            className={`slides_container ${className}`}>
             <div
-                id="slides"
-                className={`slides ${hasTransitionClass ? "transition" : ""}`}
-                style={{ left: "-"+ transformValue }}>
-                {stateSlides.map((slide, index) => {
-                    return (
-                        <div key={index} className="slide" >
-                            <div
-                                 style={{ backgroundImage: `url(${slide})`}}
-                                className="slide_inner">
+                ref={slideRef}
+                className={`slides_container ${className}`}>
+                <div
+                    id="slides"
+                    className={`slides`}
+                    style={{
+                        left: "-" + transformValue,
+                        transition: hasTransitionClass ? `all ${transitionSpeed / 1000}s ease-in-out` : "none"
+                    }}>
+                    {stateSlides.map((slide, index) => {
+                        return (
+                            <div key={index} className="slide" >
+                                <div
+                                    style={{ backgroundImage: `url(${slide})` }}
+                                    className="slide_inner">
+                                </div>
                             </div>
-                        </div>
-                    )
-                })}
-            </div>
+                        )
+                    })}
+                </div>
             </div>
             <div className="slide_indicator flex_box_start_center">
                 {stateSlides.map((__, index) => {
